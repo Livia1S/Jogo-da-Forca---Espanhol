@@ -1,112 +1,129 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Ahorcado</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jogo da Forca</title>
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="reset.css" />-->
+    <link rel="stylesheet" type="text/css" media="screen" href="header.css" />
 
-<!--<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Titillium+Web:wght@600&display=swap" rel="stylesheet">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Libre+Baskerville&family=Titillium+Web:wght@600&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-	<link type="text/css" rel="stylesheet" href="header.css">
-
-</head>
-
-<body>
+  <body>
     <header>
-		<div class="l-words">
-			<div class="c-word">Ahorcado</div>
-		</div>
+      <div class="l-words">
+        <div class="c-word">Ahorcado</div>
+      </div>
 
-
-		<h2>Mejores Libros</h2>
-		
+      <h2 id="subtitulo">Mejores Libros</h2>
     </header>
 
-    <div id ="autor">
-		<h3 class="transparente">Autor</h3>
-		</div>
-	
-		<div class="forca">
+    <main>
+      <!--<div class="forca">
+        <canvas id="tela" width="400" height="600"></canvas>
+      </div>>-->
 
-    	<canvas id="stick" width="400" height="600"></canvas> 
+      <section class="botoes disable">
+        <h2>letras</h2>
+        <div>
+          <button value="a" data-letra>A</button>
+          <button value="ã" data-letra>Ã</button>
+          <button value="á" data-letra>Á</button>
+          <button value="â" data-letra>Â</button>
+          <button value="b" data-letra>B</button>
+          <button value="c" data-letra>C</button>
+          <button value="ç" data-letra>Ç</button>
+          <button value="d" data-letra>D</button>
+          <button value="e" data-letra>E</button>
+          <button value="é" data-letra>É</button>
+          <button value="ê" data-letra>Ê</button>
+          <button value="f" data-letra>F</button>
+          <button value="g" data-letra>G</button>
+          <button value="h" data-letra>H</button>
+          <button value="i" data-letra>I</button>
+          <button value="í" data-letra>Í</button>
+          <button value="j" data-letra>J</button>
+          <button value="k" data-letra>K</button>
+          <button value="l" data-letra>L</button>
+          <button value="m" data-letra>M</button>
+          <button value="n" data-letra>N</button>
+          <button value="ñ" data-letra>Ñ</button>
+          <button value="o" data-letra>O</button>
+          <button value="ó" data-letra>Ó</button>
+          <button value="ô" data-letra>Ô</button>
+          <button value="p" data-letra>P</button>
+          <button value="q" data-letra>Q</button>
+          <button value="r" data-letra>R</button>
+          <button value="s" data-letra>S</button>
+          <button value="t" data-letra>T</button>
+          <button value="u" data-letra>U</button>
+          <button value="ú" data-letra>Ú</button>
+          <button value="v" data-letra>V</button>
+          <button value="w" data-letra>W</button>
+          <button value="x" data-letra>X</button>
+          <button value="y" data-letra>Y</button>
+          <button value="z" data-letra>Z</button>
+        </div>
+      </section>
 
-		</div>
+      <section class="palavras">
+        <h3>Haga clic para comenzar</h3>
+      </section>
 
+      <section class="armazenamento">
+        <div class="sugestao-titulo">
+          <h2>Autora/Autor del Libro</h2>
 
+          <div>
+            <input type="text" class="sugestao" placeholder="..." />
 
+            <button onclick="enviarItem()" id="enviar">
+              <i class="fa-solid fa-pencil"></i>Escribe y Lee
+            </button>
+          </div>
+        </div>
+      </section>
 
-	<div id="palavras">
+      <!--<section class="forca">-->
+        <section id="tela">
+        <canvas id="stick" width="400" height="600"></canvas>
+      </section>
 
-		<!--<div class="letras">A</div>
-		<div class="letras">E</div>
-		<div class="letras">I</div>
-		<div class="letras">O</div>
-		<div class="letras">U</div>
-		<div class="letras">G</div>-->
-		
+      <section class="play">
+        <div>
+          <button id="iniciar">Empezar Juego</button>
+        </div>
 
-	</div>  
+        <button id="trocar">
+          <a href="https://livia1s.github.io/jogo_da_forca/" target="_blank"
+            ><i class="fa-solid fa-link"></i>Aquí hay un juego del ahorcado en portugués</a
+          >
+        </button>
+      </section>
 
-
-	<div>
-        	
-        <button id="iniciar">Iniciar Juego</button>
-
-  </div>
-
-  <div id = "botoes">
-
-      <button class="bt" id="tecla-A" onclick="verificaLetraEscolhida('A')">A</button>
-      <button id="tecla-Á" onclick="verificaLetraEscolhida('Á')">Á</button>
-      <button id="tecla-B" onclick="verificaLetraEscolhida('B')">B</button>
-      <button id="tecla-C" onclick="verificaLetraEscolhida('C')">C</button>
-      <button id="tecla-D" onclick="verificaLetraEscolhida('D')">D</button>
-      <button id="tecla-E" onclick="verificaLetraEscolhida('E')">E</button>
-      <button id="tecla-É" onclick="verificaLetraEscolhida('É')">É</button>
-      <button class="bt" id="tecla-F" onclick="verificaLetraEscolhida('F')">F</button>
-      <button id="tecla-G" onclick="verificaLetraEscolhida('G')">G</button>
-      <button id="tecla-H" onclick="verificaLetraEscolhida('H')">H</button>
-      <button id="tecla-I" onclick="verificaLetraEscolhida('I')">I</button>
-      <button id="tecla-Í" onclick="verificaLetraEscolhida('Í')">Í</button>
-      <button id="tecla-J" onclick="verificaLetraEscolhida('J')">J</button>
-      <button id="tecla-K" onclick="verificaLetraEscolhida('K')">K</button>
-      <button class="bt" id="tecla-L" onclick="verificaLetraEscolhida('L')">L</button>
-      <button id="tecla-M" onclick="verificaLetraEscolhida('M')">M</button>
-      <button id="tecla-N" onclick="verificaLetraEscolhida('N')">N</button>
-      <button id="tecla-Ñ" onclick="verificaLetraEscolhida('Ñ')">Ñ</button>
-      <button id="tecla-O" onclick="verificaLetraEscolhida('O')">O</button>
-      <button id="tecla-Ó" onclick="verificaLetraEscolhida('Ó')">Ó</button>
-      <button id="tecla-P" onclick="verificaLetraEscolhida('P')">P</button>
-      <button class="bt" id="tecla-Q" onclick="verificaLetraEscolhida('Q')">Q</button>
-      <button id="tecla-R" onclick="verificaLetraEscolhida('R')">R</button>
-      <button id="tecla-S" onclick="verificaLetraEscolhida('S')">S</button>
-      <button id="tecla-T" onclick="verificaLetraEscolhida('T')">T</button>
-      <button id="tecla-U" onclick="verificaLetraEscolhida('U')">U</button>
-      <button id="tecla-Ú" onclick="verificaLetraEscolhida('Ú')">Ú</button>
-      <button id="tecla-V" onclick="verificaLetraEscolhida('V')">V</button>
-      <button class="bt" id="tecla-W" onclick="verificaLetraEscolhida('W')">W</button>
-      <button id="tecla-X" onclick="verificaLetraEscolhida('X')">X</button>
-      <button id="tecla-Y" onclick="verificaLetraEscolhida('Y')">Y</button>
-      <button id="tecla-Z" onclick="verificaLetraEscolhida('Z')">Z</button>
       
+    </main>
 
-   </div>
+    <footer>
+      <span>Desarrollado por Livia S.</span>
+    </footer>
+
     
-   <footer>
 
-        <p>Desenvolvido por Livia S.</p>
-
-   </footer>
-
-
-<script type="text/javascript" src="header.js"></script>
-
-</body>
-
+    <script type="text/javascript" src="header.js"></script>
+  </body>
 </html>
